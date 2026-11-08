@@ -1,0 +1,285 @@
+/* Estilos Base */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+.contenedor {
+    max-width: 850px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Barra Superior */
+.barra-usuario {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.formulario-lineal { display: inline; }
+
+/* Títulos */
+h1 {
+    margin: 0 0 20px 0;
+    color: #1a1a1a;
+}
+
+/* Botones Genéricos */
+.boton {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.boton-principal { background-color: #007bff; color: white; }
+.boton-secundario { background-color: #6c757d; color: white; }
+.boton-salir { background-color: #f8f9fa; color: #dc3545; border: 1px solid #ddd; }
+.boton-entrar { background-color: #28a745; color: white; }
+
+/* Buscador */
+.barra-acciones {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    gap: 10px;
+}
+
+.formulario-busqueda input[type="text"] {
+    padding: 8px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    width: 220px;
+}
+
+/* Tabla de Tareas */
+.tabla-tareas {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla-tareas th {
+    text-align: left;
+    padding: 12px;
+    background-color: #f8f9fa;
+    color: #495057;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.tabla-tareas td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.titulo-tarea { font-weight: 500; color: #212529; }
+.texto-derecha { text-align: right; }
+
+/* Enlaces de Acción */
+.enlace-ver { color: #007bff; text-decoration: none; margin-left: 10px; }
+.enlace-editar { color: #fd7e14; text-decoration: none; margin-left: 10px; }
+.enlace-eliminar { color: #dc3545; text-decoration: none; margin-left: 10px; }
+
+.mensaje-vacio {
+    text-align: center;
+    padding: 50px !important;
+    color: #28a745;
+}
+
+/* Estilos para Formulario de Creación/Edición */
+.titulo-formulario {
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+    color: #2c3e50;
+}
+
+.tarjeta-formulario {
+    background-color: #fcfcfc;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+}
+
+/* Estilo para las etiquetas <p> que genera Django */
+.campos-django p {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilo para los labels de Django */
+.campos-django label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+/* Estilo para los inputs, textareas y selects dentro del form */
+.campos-django input,
+.campos-django textarea,
+.campos-django select {
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box; /* Asegura que el padding no rompa el ancho */
+}
+
+/* Ajuste para el botón en formularios */
+.boton-bloque {
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px;
+    font-size: 1rem;
+}
+
+.enlace-volver {
+    text-decoration: none;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.enlace-volver:hover {
+    color: #007bff;
+}
+
+/* Ajuste para contenedores de login/registro (más estrechos) */
+.contenedor-pequeno {
+    max-width: 400px; /* Un formulario de registro no necesita ser tan ancho */
+    margin: 60px auto;
+}
+
+/* Estilo para el texto de ayuda inferior */
+.texto-ayuda {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.enlace-secundario {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Mejoras visuales para errores de Django (si los hay) */
+.errorlist {
+    color: #dc3545;
+    list-style: none;
+    padding: 0;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+}
+
+.campos-django input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.075);
+}
+
+/* Asegúrate de tener estas clases para los formularios */
+.contenedor-pequeno {
+    max-width: 400px;
+    margin: 60px auto;
+}
+
+.tarjeta-formulario {
+    background-color: #ffffff;
+    padding: 25px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+}
+
+.campos-django p {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.campos-django input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.boton-bloque {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+.texto-ayuda {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+}
+
+/* Estilos para la vista de Detalle */
+.tarjeta-detalle {
+    background: white;
+    padding: 40px;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+}
+
+.etiqueta-info {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #999;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.titulo-detalle {
+    margin: 0 0 20px 0;
+    font-size: 2rem;
+    color: #2c3e50;
+}
+
+.cuerpo-detalle {
+    margin-bottom: 30px;
+}
+
+.descripcion {
+    font-size: 1.1rem;
+    color: #4a4a4a;
+    line-height: 1.7;
+}
+
+.sin-contenido {
+    color: #bbb;
+}
+
+.separador {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 20px 0;
+}
+
+.acciones-detalle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

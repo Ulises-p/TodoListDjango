@@ -1,0 +1,30 @@
+<!doctype html>
+{% load static %}
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Eliminar Tarea</title>
+</head>
+<body>
+    <div class="contenedor contenedor-pequeno">
+        <header class="barra-usuario">
+            <a href="{% url 'list-tareas' %}" class="enlace-volver">← Cancelar y volver</a>
+        </header>
+
+        <h1 class="titulo-formulario">¿Eliminar tarea?</h1>
+
+        <div class="tarjeta-formulario tarjeta-alerta">
+            <form method="POST">
+                {% csrf_token %}
+                <p class="mensaje-confirmacion">
+                    Vas a eliminar definitivamente la tarea:<br>
+                    <strong>"{{ tarea.titulo }}"</strong>
+                </p>
+                <input type="submit" value="Sí, eliminar tarea" class="boton boton-eliminar boton-bloque">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!doctype html>
+{% load static %}
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Lista de Pendientes</title>
+</head>
+<body>
+    <div class="contenedor">
+        <header class="barra-usuario">
+
+            {% if request.user.is_authenticated %}
+                <span class="nombre-usuario">Hola, <strong>{{request.user}}</strong></span>
+                <form action="{% url 'logout' %}" method="post" class="formulario-lineal">
+                    {% csrf_token %}
+                    <button type="submit" class="boton boton-salir">Salir</button>
+                </form>
+            {% else %}
+                <a href="{% url 'login' %}" class="boton boton-entrar">Login</a>
+            {% endif %}
+        </header>
+
+        <h1>Lista de Pendientes</h1>
+        <div class="barra-acciones">
+            <a href="{% url 'crear-tarea' %}" class="boton boton-principal">+ Nueva tarea</a>
+
+            <form method="GET" class="formulario-busqueda">
+                <input type="text" name="buscador" value="{{volar_busqueda}}" placeholder="Buscar tarea...">
+                <button type="submit" class="boton boton-secundario">Buscar</button>
+            </form>
+        </div>
+
+        <table class="tabla-tareas">
+            <thead>
+                <tr>
+                    <th>Tarea</th>
+                    <th class="texto-derecha">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for tarea in tareas %}
+                <tr>
+                    <td class="titulo-tarea">{{ tarea.titulo }}</td>
+                    <td class="texto-derecha">
+                        <a href="{% url 'tarea' tarea.id %}" class="enlace-ver">Ver</a>
+                        <a href="{% url 'editar-tarea' tarea.id %}" class="enlace-editar">Editar</a>
+                        <a href="{% url 'eliminar-tarea' tarea.id %}" class="enlace-eliminar">Eliminar</a>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="2" class="mensaje-vacio">
+                        <h3>🎉 ¡Enhorabuena! No tienes tareas pendientes.</h3>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

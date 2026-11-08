@@ -1,0 +1,26 @@
+# Compilados de Python
+__pycache__/
+*.py[cod]
+
+# Entornos virtuales
+.venv/
+venv/
+env/
+ENV/
+
+# Ficheros de configuración/entorno
+.env
+*.env
+
+# Logs y cachés
+*.log
+.pytest_cache/
+.coverage
+.cache/
+
+# Bases de datos locales (si usas SQLite)
+db.sqlite3
+
+# Configuración de IDEs (si no quieres compartirla)
+.idea/
+.vscode/

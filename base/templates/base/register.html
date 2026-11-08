@@ -1,0 +1,30 @@
+<!doctype html>
+{% load static %}
+<html lang="es">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Registro de Usuario</title>
+</head>
+<body>
+    <div class="contenedor contenedor-pequeno">
+        <h1 class="titulo-formulario">Crear cuenta</h1>
+
+        <div class="tarjeta-formulario">
+            <form method="POST" class="formulario-estandar">
+                {% csrf_token %}
+                <div class="campos-django">
+                    {{form.as_p}}
+                </div>
+                <input type="submit" value="Registrarse" class="boton boton-principal boton-bloque">
+            </form>
+        </div>
+
+        <p class="texto-ayuda">
+            ¿Ya tienes cuenta? <a href="{% url 'login' %}" class="enlace-secundario">Inicia sesión aquí</a>
+        </p>
+    </div>
+</body>
+</html>

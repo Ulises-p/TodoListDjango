@@ -1,0 +1,29 @@
+<!doctype html>
+{% load static %}
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Ingresar</title>
+</head>
+<body>
+    <div class="contenedor contenedor-pequeno">
+        <h1 class="titulo-formulario">Ingresar</h1>
+
+        <div class="tarjeta-formulario">
+            <form method="POST" class="formulario-estandar">
+                {% csrf_token %}
+                <div class="campos-django">
+                    {{form.as_p}}
+                </div>
+                <input type="submit" value="Entrar" class="boton boton-entrar boton-bloque">
+            </form>
+        </div>
+
+        <p class="texto-ayuda">
+            ¿No tienes cuenta? <a href="{% url 'register' %}" class="enlace-secundario">Regístrate aquí</a>
+        </p>
+    </div>
+</body>
+</html>

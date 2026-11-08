@@ -1,0 +1,29 @@
+<!doctype html>
+{% load static %}
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Formulario de Tareas</title>
+</head>
+<body>
+    <div class="contenedor">
+        <header class="barra-usuario">
+            <a href="{% url 'list-tareas' %}" class="enlace-volver">← Volver a la lista</a>
+        </header>
+
+        <h1 class="titulo-formulario">Gestionar Tarea</h1>
+
+        <div class="tarjeta-formulario">
+            <form method="POST" action="" class="formulario-estandar">
+                {% csrf_token %}
+                <div class="campos-django">
+                    {{form.as_p}}
+                </div>
+                <input type="submit" value="Guardar Tarea" class="boton boton-principal boton-bloque">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

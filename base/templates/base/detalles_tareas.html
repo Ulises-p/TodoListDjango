@@ -1,0 +1,39 @@
+<!doctype html>
+{% load static %}
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Detalle de Tarea</title>
+</head>
+<body>
+    <div class="contenedor">
+        <header class="barra-usuario">
+            <a href="{% url 'list-tareas' %}" class="enlace-volver">← Volver a la lista</a>
+        </header>
+
+        <div class="tarjeta-detalle">
+            <span class="etiqueta-info">Detalles de la tarea</span>
+            <h1 class="titulo-detalle">{{ tarea.titulo }}</h1>
+
+            <div class="cuerpo-detalle">
+                <p class="descripcion">
+                    {% if tarea.descripcion %}
+                        {{ tarea.descripcion }}
+                    {% else %}
+                        <em class="sin-contenido">Sin descripción adicional.</em>
+                    {% endif %}
+                </p>
+            </div>
+
+            <hr class="separador">
+
+            <div class="acciones-detalle">
+                <a href="{% url 'editar-tarea' tarea.id %}" class="boton boton-secundario">Editar contenido</a>
+                <a href="{% url 'eliminar-tarea' tarea.id %}" class="enlace-eliminar">Eliminar esta tarea</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
